@@ -639,6 +639,18 @@ CellularError_t Cellular_SocketRegisterClosedCallback( CellularHandle_t cellular
                                                        CellularSocketClosedCallback_t closedCallback,
                                                        void * pCallbackContext );
 
+                                                       /**
+ * @brief Get internal temperature.
+ *
+ * @param[in] cellularHandle The opaque cellular context pointer created by Cellular_Init.
+ * @param[out] pTempDegC Out parameter to provide the internal temperature in degrees Celsius.
+ *
+ * @return CELLULAR_SUCCESS if the operation is successful, otherwise an error
+ * code indicating the cause of the error.
+ */
+CellularError_t Cellular_GetInternalTemperature( CellularHandle_t cellularHandle,
+                                        int32_t * tempDegC );
+
 /* *INDENT-OFF* */
 #ifdef __cplusplus
     }

@@ -156,6 +156,10 @@ static void _Cellular_FreeContext( CellularContext_t * pContext )
         if( cellularContextTable[ i ] == pContext )
         {
             cellularContextTable[ i ] = NULL;
+            Platform_DeleteDetachedThread( ); //TODO: bahmed - this will delte the pktio read thread (for all contexts)
+#if(CELLULAR_CONTEXT_MAX != 1 )
+#error "The following code assumes CELLULAR_CONTEXT_MAX is 1, it will need to be updated if not."
+#endif
             #if ( CELLULAR_CONFIG_STATIC_ALLOCATION_CONTEXT == 0 )
             {
                 Platform_Free( pContext );
