@@ -651,6 +651,17 @@ CellularError_t Cellular_SocketRegisterClosedCallback( CellularHandle_t cellular
 CellularError_t Cellular_GetInternalTemperature( CellularHandle_t cellularHandle,
                                         int32_t * tempDegC );
 
+
+CellularError_t Cellular_ConnectTransparentTCP(CellularHandle_t cellularHandle,
+                                               const char *apn,
+                                               const char *host,
+                                               uint16_t port);
+
+CellularError_t Cellular_ConnectTransparentUDP(CellularHandle_t cellularHandle,
+                                               const char *apn,
+                                               const char *host,
+                                               uint16_t port);
+                                               
 /* *INDENT-OFF* */
 #ifdef __cplusplus
     }

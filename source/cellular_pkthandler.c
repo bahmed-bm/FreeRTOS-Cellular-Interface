@@ -764,7 +764,10 @@ CellularPktStatus_t _Cellular_TimeoutAtcmdDataSendSuccessToken( CellularContext_
 
         if( pktStatus == CELLULAR_PKT_STATUS_OK )
         {
-            pktStatus = _Cellular_DataSendWithTimeoutDelayRaw( pContext, dataReq, dataTimeoutMS );
+            if(dataReq.dataLen > 0)
+            {
+                pktStatus = _Cellular_DataSendWithTimeoutDelayRaw( pContext, dataReq, dataTimeoutMS );
+            }
         }
 
         _Cellular_PktHandlerReleasePktRequestMutex( pContext );
