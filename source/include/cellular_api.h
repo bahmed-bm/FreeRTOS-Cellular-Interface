@@ -661,6 +661,8 @@ CellularError_t Cellular_ConnectTransparentUDP(CellularHandle_t cellularHandle,
                                                const char *apn,
                                                const char *host,
                                                uint16_t port);
+
+CellularError_t Cellular_GetCarrierConfig(CellularHandle_t cellularHandle, Hl78xxCarrierConfig_t *pCarrierCfg);
                                                
 /* *INDENT-OFF* */
 #ifdef __cplusplus

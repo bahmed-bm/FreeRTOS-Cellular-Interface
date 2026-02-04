@@ -706,6 +706,19 @@ typedef struct CellularSocketAddress
     uint16_t port;                 /**< Port number. */
 } CellularSocketAddress_t;
 
+typedef enum Hl78xxCarrierId
+{
+    CARRIER_ID_UNKNOWN=0,
+    CARRIER_ID_VERIZON=1,
+    CARRIER_ID_ATT=5
+} Hl78xxCarrierId_t;
+
+typedef struct Hl78xxCarrierConfig
+{
+    Hl78xxCarrierId_t id;
+} Hl78xxCarrierConfig_t;
+
+
 /**
  * @ingroup cellular_datatypes_functionpointers
  * @brief Callback used to inform about the response of an AT command sent
